@@ -223,6 +223,7 @@ header {
 	margin: 0;
 	background: none;
 	border: none;
+	z-index : 0;
 }
 .tm_navbar .nav {
 	float: none;

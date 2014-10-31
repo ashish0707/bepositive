@@ -124,9 +124,45 @@
         $('.thumb').touchTouch();
     
     });
-    
+
   </script>
-  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+<script>
+$(document).ready(function(){
+$('#pass').val("");
+$( "#hello" ).dialog({width:600} , {height : 600 } ,{
+  buttons: {
+    'Login': function() {
+       //do something
+	   $('html, body').css({
+    'overflow': 'auto',
+    'height': 'auto'
+	});
+	var temp=$("#pass").val();
+	
+	 if (temp == "password")
+       $(this).dialog('close');
+	 else 
+		alert('wrong password'+temp);
+    }
+  }
+},{ autoOpen: true });
+
+$('.ui-dialog-titlebar-close').css({'display':'none'});
+$('.ui-dialog').css({ 'background' : 'yellow'});
+$('html, body').css({
+    'overflow': 'hidden',
+    'height': '100%'
+})
+
+});
+</script>  
+
+
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -147,6 +183,11 @@
 </head>
 
 <body>
+
+<div id="hello" title="Login"><p style="text-align:center"><font face="Georgia" size="4" >
+Please Login To Continue</font></p><br>
+Password: <input type="text" id="pass" placeholder="" name="password"><br><br>		
+</div>
 <!--==============================header=================================-->
 <header id="header">
       <div class="container">
