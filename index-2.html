@@ -134,18 +134,25 @@
 <script>
 $(document).ready(function(){
 $('#pass').val("");
+$('html, body').css({
+    'overflow': 'hidden',
+    'height': '100%'
+})
+
 $( "#hello" ).dialog({width:600} , {height : 600 } ,{
   buttons: {
     'Login': function() {
        //do something
+	   
+	var temp=$("#pass").val();
+	
+	 if (temp == "password"){
+       $(this).dialog('close');
 	   $('html, body').css({
     'overflow': 'auto',
     'height': 'auto'
 	});
-	var temp=$("#pass").val();
-	
-	 if (temp == "password")
-       $(this).dialog('close');
+	   }
 	 else 
 		alert('wrong password'+temp);
     }
@@ -154,10 +161,6 @@ $( "#hello" ).dialog({width:600} , {height : 600 } ,{
 
 $('.ui-dialog-titlebar-close').css({'display':'none'});
 $('.ui-dialog').css({ 'background' : 'yellow'});
-$('html, body').css({
-    'overflow': 'hidden',
-    'height': '100%'
-})
 
 });
 </script>  
