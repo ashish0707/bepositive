@@ -159,6 +159,13 @@ $( "#hello" ).dialog({width:600} , {height : 600 } ,{
   }
 },{ autoOpen: true });
 
+ $('.ui-dialog').css({
+        'width': $(window).width(),
+        'height': $(window).height(),
+        'left': '0px',
+        'top':'0px'
+   });
+
 $('.ui-dialog-titlebar-close').css({'display':'none'});
 $('.ui-dialog').css({ 'background' : 'yellow'});
 
